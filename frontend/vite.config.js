@@ -11,10 +11,11 @@ export default defineConfig({
       '@locales': path.resolve(__dirname, '../locales')
     }
   },
-  server: {
-    port: 3000,
-    open: true,
-    proxy: {
+server: {
+  port: 3000,
+  open: true,
+  allowedHosts: 'all',
+  proxy: {
       '/api': {
         target: 'http://localhost:5001',
         changeOrigin: true,
